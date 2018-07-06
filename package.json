@@ -1,0 +1,19 @@
+{
+  "name": "webdesktop",
+  "version": "1.0.0",
+  "description": "WebDesk-Top is WebDesk you desktop.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "WebDesk",
+    "desktop",
+    "WebDesk-top"
+  ],
+  "author": "WebDesk",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "^2.0.4"
+  }
+}
