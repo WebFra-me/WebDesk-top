@@ -1,13 +1,13 @@
 $(document).ready(function() {
   var fs = require('fs');
 
-document.getElementById("apps").innerHTML = "";
+document.getElementById("apps").innerHTML = '';
 apps = fs.readdirSync("Apps/");
 for (i = 0; i < apps.length; i++) {
   if(apps[i] != ".DS_Store"){
   app = fs.readFileSync("Apps/" + apps[i] + "/Admin/app.json");
   oapp = JSON.parse(app);
-    document.getElementById("apps").innerHTML += '<a style="float: left;" href="Apps/' + apps[i] + '/index.html" target="_blank">' + oapp.title + '</a> ';
+    document.getElementById("apps").innerHTML += '<div class="card bg-secondary text-white"><div class="card-body"><h4 class="card-title">' + oapp.title + '</h4><a class="btn btn-primary" href="Apps/' + apps[i] + '/index.html" target="_blank"><b>Open</b></a></div></div>';
   }
 }
 });
