@@ -1,6 +1,5 @@
 $(document).ready(function() {
   var fs = require('fs');
-
 document.getElementById("apps").innerHTML = '';
 apps = fs.readdirSync("Apps/");
 for (i = 0; i < apps.length; i++) {
