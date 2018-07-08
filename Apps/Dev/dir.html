@@ -17,13 +17,24 @@
     </ul>
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" id="nf" href="#">New File</a>
+        <a class="nav-link" data-toggle="collapse" data-target="#nf" href="#">New File</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="delete" href="#">Delete</a>
       </li>
     </ul>
   </nav>
+  <div id="nf" class="collapse bg-secondary">
+    <br><br>
+    <div class="container">
+      <div class="form-group">
+        <label for="usr"><b>Name Your File:</b></label>
+        <input type="text" class="form-control" placeholder="File Name" id="napp">
+      </div>
+      <button class="btn btn-success" id="nf1">Creat</button>
+    </div>
+    <br><br>
+  </div>
   <div class="jumbotron">
     <h1 id="path">Dev</h1>
     <p>Lets build an app!</p>

@@ -11,4 +11,18 @@ for (i = 0; i < apps.length; i++) {
     document.getElementById("apps").innerHTML += '<div class="card"><div class="card-body"><h4 class="card-title">' + apps[i] + '</h4><a class="btn btn-primary" href="page.html?app=' + id + '&page=' + apps[i] + '"><b>Open</b></a></div></div>';
   }
 }
+$("#nf1").click(function(){
+  var filen = document.getElementById("napp").value;
+  var dir = "./Apps/" + id + "/" + filen;
+  if (!fs.existsSync(dir)){
+    fs.writeFile(dir, '', function (err) {
+      if (err) throw err;
+        console.log('Saved!');
+      });
+      window.location.assign('page.html?app=' + id + '&page=' + filen);
+  }
+  else{
+    window.alert("This App Already Exists");
+  }
+});
 });

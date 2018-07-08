@@ -5,21 +5,14 @@ $(document).ready(function() {
   var id = url.searchParams.get("app");
   var page = url.searchParams.get("page");
   document.getElementById("path").innerHTML = id + "/" + page;
-  path = "Apps/" + id + "/" + page;
+  var path = "Apps/" + id + "/" + page;
   bob = fs.readFileSync(path);
   document.getElementById("con").innerHTML = bob;
   $("#link").click(function(){
     window.location.assign('dir.html?app=' + id);
   });
-  $("#save").click(function(path){
-    save = document.getElementById("con").innerHTML;
-    fs.writeFile(path, save, function (err) {
-      if (err) throw err;
-        console.log('Saved!');
-      });
-  });
   $("#delete").click(function(){
-    
+
   });
 //CodeMirror
 var myCodeMirror = CodeMirror.fromTextArea(con, {
@@ -41,5 +34,12 @@ extraKeys: {"Ctrl-Space": "autocomplete",
         },
 "Ctrl-J": "toMatchingTag"
 }
+});
+$("#save").click(function(){
+  save = myCodeMirror.getValue();
+  fs.writeFile(path, save, function (err) {
+    if (err) throw err;
+      console.log('Save!');
+    });
 });
 });
