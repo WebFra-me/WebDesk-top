@@ -7,6 +7,9 @@ $(document).ready(function() {
   document.getElementById("path").innerHTML = id + "/" + page;
   bob = fs.readFileSync("Apps/" + id + "/" + page);
   document.getElementById("con").innerHTML = bob;
+  function linkFunction(){
+    window.location.assign('dir.html?app=' + id);
+  }
 //CodeMirror
 var myCodeMirror = CodeMirror.fromTextArea(con, {
 lineNumbers: true,
