@@ -4,7 +4,17 @@
   "description": "WebDesk-Top is WebDesk you desktop.",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "appId": "webdek.me",
+    "productName": "WebDesk-top",
+    "mac": {
+      "category": "WebDek-top.Eduducation"
+    }
   },
   "keywords": [
     "WebDesk",
