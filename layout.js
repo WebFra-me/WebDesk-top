@@ -22,7 +22,7 @@ $(document).ready(function() {
     var wd_banner = fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/banner.html');
   }
   else{
-    var wd_banner = '<div class="jumbotron"><h1>WebDesk-top</h1><p>The WebDesk for your desktop.</p></div>';
+    var wd_banner = '<div class="jumbotron"><h1>' + wd_app +'</h1></div>';
   }
   if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/' + wd_sec + '.html')) {
     var wd_body = fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/' + wd_sec + '.html');
