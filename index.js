@@ -20,7 +20,7 @@ for (i = 0; i < apps.length; i++) {
     if (fs.existsSync(wd_dir + 'Apps/' + apps[i] + "/Admin/app.json")) {
       app = fs.readFileSync(wd_dir + 'Apps/' + apps[i] + "/Admin/app.json");
       oapp = JSON.parse(app);
-      document.getElementById("apps").innerHTML += '<div class="card"><div class="card-body"><h4 class="card-title">' + oapp.title + '</h4><a class="btn btn-primary" href="front.html?wd_app=' + apps[i] + '&wd_sec=index"><b>Open</b></a></div></div>';
+      document.getElementById("apps").innerHTML += '<div class="card"><div class="card-body"><h4 class="card-title">' + oapp.title + '</h4><a class="btn btn-primary" href="layout.html?wd_app=' + apps[i] + '&wd_sec=index"><b>Open</b></a></div></div>';
     }
 }
 });
