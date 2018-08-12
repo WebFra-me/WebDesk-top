@@ -1,5 +1,6 @@
 $(document).ready(function() {
   var fs = require('fs');
+  const {shell} = require('electron');
   const wd_homedir = require('os').homedir();
   var wd_dir = wd_homedir + '/WebDesk-top/';
   if (!fs.existsSync(wd_dir)) {
@@ -14,6 +15,7 @@ $(document).ready(function() {
   if (!fs.existsSync(wd_dir + 'Admin/')) {
     fs.mkdirSync(wd_dir + 'Admin/');
   }
+  //shell.writeShortcutLink(wd_homedir + '/Documents/');
 document.getElementById("apps").innerHTML = '';
 apps = fs.readdirSync(wd_dir + 'Apps/');
 for (i = 0; i < apps.length; i++) {
@@ -23,4 +25,7 @@ for (i = 0; i < apps.length; i++) {
       document.getElementById("apps").innerHTML += '<div class="card"><div class="card-body"><h4 class="card-title">' + oapp.title + '</h4><a class="btn btn-primary" href="layout.html?wd_app=' + apps[i] + '&wd_sec=index" target="_blank"><b>Open</b></a></div></div>';
     }
 }
+$("#wd_dir").click(function(){
+  shell.openItem(wd_dir);
+});
 });
