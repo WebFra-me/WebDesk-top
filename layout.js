@@ -32,8 +32,6 @@ $(document).ready(function() {
     var script = document.createElement('script');
     script.src = "Plugins/bootstrap/dist/js/bootstrap.min.js";
     document.body.appendChild(script);
-    //var wd_test = __dirname + "/Plugins/bootstrap/dist/js/bootstrap.min.js";
-    //require(wd_test);
     var wd_head = '<title>WebDesk-top</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="Plugins/bootstrap/dist/css/bootstrap.min.css"><link rel="stylesheet" href="style.css"><style>' + wd_css + '</style>';
   }
   if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/banner_' + wd_sec + '.html')) {
@@ -84,7 +82,6 @@ $(document).ready(function() {
   document.getElementById("wd_body").innerHTML = wd_body;
   document.getElementById("wd_foot").innerHTML = wd_foot;
   if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/' + wd_sec + '.js')) {
-    require(wd_dir + 'Apps/' + wd_app + '/codemirror-5.39.0/lib/codemirror.js');
     require(wd_dir + 'Apps/' + wd_app + '/' + wd_sec + '.js');
   }
 });
