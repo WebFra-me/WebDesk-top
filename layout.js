@@ -22,17 +22,17 @@ $(document).ready(function() {
   else{
     var wd_css = "";
   }
+  if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/style.css')) {
+    var wd_css = wd_css + fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/style.css');
+  }
   if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/head_' + wd_sec + '.html')) {
-    var wd_head = "<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>" + fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/head_' + wd_sec + '.html') + '<style>' + wd_css + '</style><script>if (window.module) module = window.module;</script>';
+    var wd_head = "<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>" + fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/head_' + wd_sec + '.html') + '<link rel="stylesheet" href="Plugins/fontawesome/css/all.css"><link rel="stylesheet" href="Plugins/jquery-ui/jquery-ui.min.css"><link rel="stylesheet" href="Plugins/bootstrap/dist/css/bootstrap.min.css"><style>' + wd_css + '</style><script>if (window.module) module = window.module;</script>';
   }
   else if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/head.html')) {
-    var wd_head = "<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>" + fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/head.html') + '<style>' + wd_css + '</style><script>if (window.module) module = window.module;</script>';
+    var wd_head = "<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>" + fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/head.html') + '<link rel="stylesheet" href="Plugins/fontawesome/css/all.css"><link rel="stylesheet" href="Plugins/jquery-ui/jquery-ui.min.css"><link rel="stylesheet" href="Plugins/bootstrap/dist/css/bootstrap.min.css"><style>' + wd_css + '</style><script>if (window.module) module = window.module;</script>';
   }
   else{
-    var script = document.createElement('script');
-    script.src = "Plugins/bootstrap/dist/js/bootstrap.min.js";
-    document.body.appendChild(script);
-    var wd_head = '<title>WebDesk-top</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="Plugins/bootstrap/dist/css/bootstrap.min.css"><link rel="stylesheet" href="style.css"><style>' + wd_css + '</style>';
+    var wd_head = '<title>WebDesk-top</title><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="stylesheet" href="Plugins/fontawesome/css/all.css"><link rel="stylesheet" href="Plugins/jquery-ui/jquery-ui.min.css"><link rel="stylesheet" href="Plugins/bootstrap/dist/css/bootstrap.min.css"><link rel="stylesheet" href="style.css"><style>' + wd_css + '</style>';
   }
   if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/banner_' + wd_sec + '.html')) {
     var wd_banner = fs.readFileSync(wd_dir + 'Apps/' + wd_app + '/banner_' + wd_sec + '.html');
@@ -83,5 +83,8 @@ $(document).ready(function() {
   document.getElementById("wd_foot").innerHTML = wd_foot;
   if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/' + wd_sec + '.js')) {
     require(wd_dir + 'Apps/' + wd_app + '/' + wd_sec + '.js');
+  }
+  if (fs.existsSync(wd_dir + 'Apps/' + wd_app + '/plugin.js')) {
+    require(wd_dir + 'Apps/' + wd_app + '/plugin.js');
   }
 });

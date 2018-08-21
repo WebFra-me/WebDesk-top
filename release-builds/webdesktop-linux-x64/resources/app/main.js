@@ -20,6 +20,7 @@ const {app, BrowserWindow} = require('electron')
       // when you should delete the corresponding element.
       win = null
     })
+    require('./mainmenu')
   }
 
   // This method will be called when Electron has finished
@@ -43,6 +44,5 @@ const {app, BrowserWindow} = require('electron')
       createWindow()
     }
   })
-
   // In this file you can include the rest of your app's specific main process
   // code. You can also put them in separate files and require them here.
